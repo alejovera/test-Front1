@@ -1,0 +1,28 @@
+.item {
+    display: flex;
+    justify-content: space-evenly;
+}
+.item__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+    width: 50%;
+    padding: 0;
+}
+.item__iconsRow {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    /* flex-direction: column; */
+}
+.item__icons {
+    width: 100%;
+    margin-top: 1em;
+}
+.item__directionName {
+    font-size: 2em;
+}
+.item__directionData {
+    font-size: 2em;
+}
