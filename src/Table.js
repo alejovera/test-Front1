@@ -10,7 +10,6 @@ const useStyles = makeStyles(  ({
     root: {
       flexGrow: 1,
     },
-    
     paper: {
       padding: '30px',
       textAlign: 'center',
@@ -37,15 +36,15 @@ function Table() {
                                 <div className="item__iconsRow">
                                     <div className="item__icons">
                                         <AccessAlarmIcon />
-                                        <p>14</p>
+                                        <p className="item__iconNumber">14</p>
                                     </div>
                                     <div className="item__icons">
                                         <AccessAlarmIcon />
-                                        <p>14</p>
+                                        <p className="item__iconNumber">14</p>
                                     </div>
                                     <div className="item__icons">
                                         <AccessAlarmIcon />
-                                        <p>14</p>
+                                        <p className="item__iconNumber">14</p>
                                     </div>
                                 </div>
                             </div>
@@ -60,3 +59,4 @@ function Table() {
 }
 
 export default Table;
+ 
