@@ -9,12 +9,16 @@ import TableContent from './TableContent';
 const useStyles = makeStyles(  ({
     root: {
       flexGrow: 1,
+      overflow: 'hidden',
     },
     paper: {
       padding: '30px',
       textAlign: 'center',
       color: 'black',
       backgroundColor: 'white',
+      marginLeft: '0.5em',
+      marginRight: '0.5em',
+      marginBottom: '1em',
       boxShadow: '3px 3px 3px 3px #ccc',
     },
   }));
@@ -33,7 +37,7 @@ function Table(props) {
     const classes = useStyles();
     return (
             <div className={classes.root}>
-                <Grid container spacing={3}>
+                <Grid container spacing={2}>
                     {count.map(item => (
                         <Grid item xs={6}>
                             <Paper className={classes.paper}>
