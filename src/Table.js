@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import TableContent from './TableContent';
-
 
 
 const useStyles = makeStyles(  ({
@@ -13,6 +13,7 @@ const useStyles = makeStyles(  ({
     },
     paper: {
       padding: '20px',
+      paddingRight: '10px',
       textAlign: 'center',
       color: 'black',
       backgroundColor: 'white',

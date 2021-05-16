@@ -25,6 +25,9 @@
     margin-top: 0.3em;
     border-right: 1px solid black;
 }
+.item__icons:last-child {
+    border: none;
+}
 .item__iconNumber {
     font-family: 'Montserrat', sans-serif;
 }
