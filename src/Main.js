@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import Table from './Table';
 import './Main.css';
@@ -12,68 +12,94 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1,
-//   },
-//   title: {
-//     display: 'none',
-//     // justifyContent: 'space-between',
-//     [theme.breakpoints.up('sm')]: {
-//       display: 'block',
-//     },
-//   },
-//   search: {
-//     position: 'relative',
-//     display: 'flex',
-//     borderRadius: theme.shape.borderRadius,
-//     backgroundColor: fade(theme.palette.common.white, 0.15),
-//     '&:hover': {
-//       backgroundColor: fade(theme.palette.common.white, 0.25),
-//     },
-//     marginLeft: '2em',
-//     width: '50%',
-    
-//   },
-//   searchIcon: {
-//     padding: theme.spacing(0, 2),
-//     height: '100%',
-//     position: 'absolute',
-//     pointerEvents: 'none',
-//     display: 'flex',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-//   inputRoot: {
-//     color: 'inherit',
-//   },
-//   inputInput: {
-//     padding: theme.spacing(1, 1, 1, 0),
-//     // vertical padding + font size from searchIcon
-//     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-//     transition: theme.transitions.create('width'),
-//     width: '100%',
-//     [theme.breakpoints.up('sm')]: {
-//       width: '12ch',
-//       '&:focus': {
-//         width: '20ch',
-//       },
-//     },
-//   },
-// }));
-
 function Main() {
-  // const classes = useStyles();
+
+  const [items, setItems] = useState({
+    items: [
+      {
+        name: 'Downtown',
+        direction: '12345 River Road',
+        county: 'San Diego, CA 92159',
+        number: '3948-9343'
+      },
+      {
+        name: 'Imperial County',
+        direction: '12345 River Road',
+        county: 'San Diego, CA 92159',
+        number: '3948-9343'
+      },
+      {
+        name: 'North Park',
+        direction: '12345 River Road',
+        county: 'San Diego, CA 92159',
+        number: '3948-9343'
+      },
+      {
+        name: 'South Bay',
+        direction: '12345 River Road',
+        county: 'San Diego, CA 92159',
+        number: '3948-9343'
+      },
+      {
+        name: 'North County',
+        direction: '12345 River Road',
+        county: 'San Diego, CA 92159',
+        number: '3948-9343'
+      },
+      {
+        name: 'Kensington',
+        direction: '12345 River Road',
+        county: 'San Diego, CA 92159',
+        number: '3948-9343'
+      },
+      {
+        name: 'Easy County',
+        direction: '12345 River Road',
+        county: 'San Diego, CA 92159',
+        number: '3948-9343'
+      },
+      {
+        name: 'Inland County',
+        direction: '12345 River Road',
+        county: 'San Diego, CA 92159',
+        number: '3948-9343'
+      }
+
+    ]
+  })
+
+  // useEffect(() => {
+  //   setItems(prevState => ({
+  //     items: {
+  //       ...prevState.items,
+  //       name: 'Alvarado 377'
+  //     }
+  //   }))
+
+  // }, [])
+
+  
+
+  console.log(items);
 
 
-  const [count, setCount] = useState([1,2,3,4,5,6])
+  const [count, setCount] = useState([1])
 
+
+  
 
   const handleClick = e => {
       e.preventDefault()
       setCount(count.concat([3]))
-      console.log(count);
+
+      setItems({ items: [...items.items, ...[{
+        name: 'Easy County',
+        direction: '12345 River Road',
+        county: 'San Diego, CA 92159',
+        number: '3948-9343'
+      }] ] })
+
+      console.log(items);
   }
 
 
@@ -113,7 +139,7 @@ function Main() {
       </AppBar>
       </div>
       
-        <Table counter={count} />
+        <Table items={items} counter={count} />
     </div>
 
   );

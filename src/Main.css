@@ -67,4 +67,5 @@
 .searchBar__addBtn {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }

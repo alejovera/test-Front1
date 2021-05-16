@@ -26,11 +26,18 @@ const useStyles = makeStyles(  ({
 function Table(props) {
 
 
-    const [count, setCount] = useState([0,1,2])
+    const [count, setCount] = useState([])
     
+    const [data, setData] = useState(props.items)
+
+
+    console.log(data);
+
     useEffect(() => {
+        setData(props.items)
         setCount(props.counter)
     }, [props.counter])
+
 
     
     
@@ -38,14 +45,16 @@ function Table(props) {
     return (
             <div className={classes.root}>
                 <Grid container spacing={2}>
-                    {count.map(item => (
+                    {data.items.map((value, index) => 
+                        (
                         <Grid item xs={6}>
                             <Paper className={classes.paper}>
-                                <TableContent />
+                                <TableContent number={value.number} county={value.county} direction={value.direction} name={value.name} />
                             </Paper>
                         </Grid>
-                    ))}
-                        
+                        )
+                    )}
+            )  
                     
                 </Grid>
                 
