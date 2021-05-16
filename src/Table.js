@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -19,14 +19,17 @@ const useStyles = makeStyles(  ({
     },
   }));
 
-function Table() {
+function Table(props) {
 
-    
+
     const [count, setCount] = useState([0,1,2])
     
+    useEffect(() => {
+        setCount(props.counter)
+    }, [props.counter])
+
     
-
-
+    
     const classes = useStyles();
     return (
             <div className={classes.root}>
