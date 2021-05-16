@@ -12,7 +12,7 @@ const useStyles = makeStyles(  ({
       overflow: 'hidden',
     },
     paper: {
-      padding: '30px',
+      padding: '20px',
       textAlign: 'center',
       color: 'black',
       backgroundColor: 'white',
@@ -44,7 +44,7 @@ function Table(props) {
     const classes = useStyles();
     return (
             <div className={classes.root}>
-                <Grid container spacing={2}>
+                <Grid container spacing={1}>
                     {data.items.map((value, index) => 
                         (
                         <Grid item xs={6}>
